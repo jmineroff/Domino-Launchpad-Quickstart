@@ -15,15 +15,11 @@
 ### Lab 1.1 - Forking Existing Projects
 Guide your mouse to the left blue menu and click the **Search** page. Afterwards, type the word 'Training' in the cell provided and click enter to discover any projects tagged under 'Training'. (The left blue menu shrinks to show only the icon of the pages. Unshrink the left blue menu by guiding your mouse over the icon pages.)
 
-<!-- ![image](readme_images/SearchIndex.png) -->
-
 <p align="center">
 <img src = readme_images/SearchIndex.png width="800">
 </p>
 
 Select the project called WineQuality
-
-<!-- ![image](readme_images/Search.png) -->
 
 <p align="center">
 <img src = readme_images/Search.png width="800">
@@ -33,8 +29,6 @@ Read the readme to learn more about the project's use case, status, etc.
 
 In the top right corner, choose the icon to **Fork** the project. Name the project *WineQuality-yourname*
 
-<!-- ![image](readme_images/Fork.png) -->
-
 <p align="center">
 <img src = readme_images/Fork.png width="800">
 </p>
@@ -43,30 +37,23 @@ In your new project - go into the **Settings** tab
 
 View the default Hardware Tier and Compute Environment - ensure they are set to **Small** and **WineQuality** respectively:
 
-<!-- ![image](readme_images/ProjectSettings.png) -->
-
 <p align="center">
-
 <img src = readme_images/ProjectSettings.png width="800">
 </p>
 
 Go to the Access and Sharing tab - change your project visibility to **Public**
-
-<!-- ![image](readme_images/ProjectVisibility.png) -->
 
 <p align="center">
 <img src = readme_images/ProjectVisibility.png width="800">
 </p>
 
 Add your instructor or another attendee as a collaborator in your project. 
-<!-- ![image](readme_images/AddCollaborator.png) -->
 
 <p align="center">
 <img src = readme_images/AddCollaborator.png width="800">
 </p>
 
 Change their permissions to **Results Consumer**.
-<!-- ![image](readme_images/ResultsConsumer.png) -->
 
 <p align="center">
 <img src = readme_images/ResultsConsumer.png width="800">
@@ -76,15 +63,11 @@ Change their permissions to **Results Consumer**.
 
 Click back into the Overview area of your project. Then navigate to the Manage tab.
 
-<!-- ![image](readme_images/Overview.png) -->
-
 <p align="center">
 <img src = readme_images/Overview.png width="800">
 </p>
 
-Click on Add Goals
-
-<!-- ![image](readme_images/AddProjectGoals.png) -->
+Click on **Add Goals**
 
 <p align="center">
 <img src = readme_images/AddProjectGoals.png width="800">
@@ -92,20 +75,13 @@ Click on Add Goals
 
 For the goal title type in 'Explore Data' and click save. Once the goal is saved click the drop down on the right to mark the goal status as 'Data Acquisition and Exploration'.
 
-
-<!-- ![image](readme_images/Goal1status.png) -->
-
 <p align="center">
-
 <img src = readme_images/Goal1status.png width="800">
 </p>
 
 [optional] - Add a comment to the goal and tag a collaborator you've added earlier by typing '@' followed by their username. Click on the paper airplane to submit the comment.
 
-<!-- ![image](readme_images/Goal1comment.png) -->
-
 <p align="center">
-
 <img src = readme_images/Goal1comment.png width="800">
 </p>
 
@@ -113,24 +89,17 @@ For the goal title type in 'Explore Data' and click save. Once the goal is saved
 
 We will now add a data connection to the project so we can query data. To do so - navigate to the Data tab of your projects. If you're taken to the Domino Datasets view, please click on the Data Sources view instead and click on 'Add a Data Source'
 
-<!-- ![image](readme_images/AddDataSource.png) -->
-
 <p align="center">
-
 <img src = readme_images/AddDataSource.png width="800">
 </p>
 
 Select the 'winequality' s3 bucket connection and click add to project. This connection was predefined by an admin, but you'll be able to create one yourself as well. 
-
-<!-- ![image](readme_images/AddS3.png) -->
 
 <p align="center">
 <img src = readme_images/AddS3.png width="800">
 </p>
 
 The data source should look like the image below
-
-<!-- ![image](readme_images/S3done.png) -->
 
 <p align="center">
 <img src = readme_images/S3done.png width="800">
@@ -143,15 +112,11 @@ This concludes all labs in Section 1 - Prepare Project and Data!
 ### Lab 2.1 - Inspect Compute Environment
 From the left blue menu click on the cube icon called 'Environments'.
 
-<!-- ![image](readme_images/ShowEnv.png) -->
-
 <p align="center">
 <img src = readme_images/ShowEnv.png width="800">
 </p>
 
 Select 'WineQuality' 
-
-<!-- ![image](readme_images/EnvironmentsPage.png) -->
 
 <p align="center">
 <img src = readme_images/EnvironmentsPage.png width="800">
@@ -166,8 +131,6 @@ Scroll down to the Run Setup Scripts section
 Here we have a script that executes upon startup of workspace sessions or job (pre-run script) and a script that executes upon termination of a workspace session or job (post-run script) 
 
 Finally navigate to the Projects tab - you should see all projects that are leveraging this compute environment. Click on your project to navigate back to your project. 
-
-<!-- ![image](readme_images/SaidEnvs.png) -->
 
 <p align="center">
 <img src = readme_images/SaidEnvs.png width="800">
@@ -263,8 +226,6 @@ df.to_csv(path, index = False)
 
 Your notebook should be populated like the display below.
 
-<!-- ![image](readme_images/EDAView.png) -->
-
 <p align="center">
 <img src = readme_images/EDAView.png width="800">
 </p>
@@ -354,20 +315,17 @@ In the details tab of the job run note that the compute environment and hardware
 <img src = readme_images/sklearnRunDetails.png width="800">
 </p>
 
-
 Click on the **Results** tab of the job. Scroll down to view the visualizations and other outputs of the job.
 
 <p align="center">
 <img src = readme_images/sklearnResults.png width="800">
 </p>
 
-
 We've now trained 3 models and it is time to select which model we'd like to deploy.
 
 **Refresh the page**. Inspect the table and graph to understand the R^2 value and Mean Squared Error (MSE) for each model. From our results it looks like the sklearn model is the best candidate to deploy.
 
 In the next section of labs we will deploy the model we trained here!
-
 
 ## Section 3 - Deploy Model
 
@@ -384,9 +342,9 @@ To do so - navigate to the **Model APIs** tab in your project. Click **New Model
 </p>
 
 Name your model 'wine-quality-yourname'
-    
+
 For the description add the following:
-    
+
 ```
 Model Endpoint to determine the quality of wine
 
@@ -402,21 +360,21 @@ Sample Scoring Request:
   }
 }
 ```
-    
+
 Be sure to check the box **Log HTTP requests and responses to model instance logs**.
 
 <p align="center">
 <img src = readme_images/NewModelAPIConfig1.png width="800">
-</p>    
+</p>
 
 Click **Next**. On the next page:
-    
+
 For **Choose an Environment** select
 `WineQuality`
 
 For **The file containing the code to invoke (must be a Python or R file)** enter
 `scripts/predict.py`
-    
+
 For **The function to invoke** enter
 `predict`
 
@@ -425,20 +383,19 @@ And click **Create Model**
 <p align="center">
 <img src = readme_images/NewModelAPIConfig.png width="800">
 </p>
-  
+
 Over the next 2-5 minutes, you'll see the status of your model go from Preparing to Build -> Building -> Starting -> Running
 <p align="center">
 <img src = readme_images/ModelAPIBuilding.png width="800">
 </p>
 
-    
 Once your model reaches the Running state - a pod containing your model object and code for inference is up and ready to accept REST API calls.
 
 To test your model navigate to the Overview tab. In the request field in the Tester tab enter a scoring request in JSON form. You can copy the sample request that you defined in your description field.
 
 <p align="center">
 <img src = readme_images/ScoringRequest.png width="800">
-</p>        
+</p>
     
 In the response box you will see a **prediction** value representing your model's predicted quality for a bottle of wine with the attributes defined in the Request box. Try changing 'is_red' from 0 to 1 and 'alcohol' from 11 to 5 to see how the predicted quality differs. Feel free to play around with different values in the Request box.
 
@@ -453,6 +410,7 @@ In the next lab we will deploy an R shiny app that exposes a front end for colle
 Now that we have a pod running to serve new model requests - we will build out a front end to make calling our model easier for end-users.
     
 To do so - in a new browser tab first navigate back to your Project and then in the left blue menu of your project click into the **Files** section and click **New File**
+
 <p align="center">
 <img src = readme_images/AddNewFileforAppsh.png width="800">
 </p>     
@@ -483,10 +441,10 @@ R -e 'shiny::runApp("./scripts/shiny_app.R", port=8888, host="0.0.0.0")'
 #python app-dash.py
 ```
 Name the file **app.sh** and click **Save**
+
 <p align="center">
 <img src = readme_images/appsh.png width="800">
-</p>         
-
+</p>
 
 Now navigate back into the Files tab, and enter the **scripts** folder. Click add a new file and name it `shiny_app.R` (make sure the file name is exactly that, it is case sensitive) and then paste the following into the file -
 
@@ -508,8 +466,8 @@ library(httr)
 library(jsonlite)
 library(plotly)
 library(ggplot2)
- 
- 
+
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   
@@ -552,7 +510,7 @@ ui <- fluidPage(
 )
  
 prediction <- function(inpFeat1,inpFeat2,inpFeat3,inpFeat4,inpFeat5) {
-  
+
 #### COPY FULL LINES 4-7 from R tab in Model APIS page over this line of code. (It's a simple copy and paste) ####
     
     body=toJSON(list(data=list(density = inpFeat1, 
@@ -633,7 +591,7 @@ Lines 61-79 in your file should look like the following (note the url and authen
                    
 <p align="center">
 <img src = readme_images/ShinyCodePasted.png width="800">
-</p>         
+</p>
 
 Click **Save**.
 
@@ -643,7 +601,7 @@ Enter a title for your app - 'wine-quality-yourname'
 
 <p align="center">
 <img src = readme_images/LaunchApp.png width="800">
-</p>       
+</p>
 
 Click **Publish**.
                    
@@ -651,13 +609,13 @@ You'll now see the below screen, once your app is active (should be within ~1-3 
 
 <p align="center">
 <img src = readme_images/ViewApp.png width="800">
-</p>       
+</p>
         
 Once you're in the app you can try out sending different scoring requests to your model using the form on the right side of your page. Click **predict** to send a scoring request and view the results in the visualization on the left side.
                    
 <p align="center">
 <img src = readme_images/ShinyScore.png width="800">
-</p>         
+</p>
 
 ## Section 4 - Collaborate Results
 
@@ -669,8 +627,7 @@ To do so we will navigate back to our project and click on the **App** tab
 
 <p align="center">
 <img src = readme_images/GoToAppPermissions.png width="800">
-</p>         
-
+</p>
 
 From the App page navigate to the **Permissions** tab
 
@@ -678,18 +635,14 @@ In the permissions tab update the permissions to allow anyone, including anonymo
 
 <p align="center">
 <img src = readme_images/UpdateAppPermissions.png width="800">
-</p>         
+</p>
 
 Navigate back to the **settings** tab and click **Copy Link App**
 
 <p align="center">
 <img src = readme_images/CopyAppLink.png width="800">
-</p>       
+</p>
 
 Paste the copied link into a new private/incognito window and. Note that you're able to view the app without being logged into Domino (though you will still need to be logged into Launchpad as this trial environment blocks all other ingress). Try sending this URL to a colleague at your company to show them the work you've done.
 
 PS - Domino provides free licenses for business users to login and view models/apps etc.
-
-### *** End of Labs *** 
-
-So now that we've got our model into production are we done? No! We want to make sure that any models we deploy stay healthy over time, and if our models do drop in performance, we want to quickly identify and remediate any issues. Stay tuned for a demo of integrated model monitoring to see how a ML Engineer would automate the model monitoring process and make remediation a breeze.
