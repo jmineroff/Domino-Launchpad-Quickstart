@@ -33,13 +33,13 @@ In the top right corner, choose the icon to **Fork** the project. Name the proje
 <img src = readme_images/Fork.png width="800">
 </p>
 
-In your new project - go into the **Settings** tab to view the default **Hardware Tier** and **Compute Environment** - ensure they are set to **Small** and **WineQuality** respectively:
+In your new project - go into the **Settings** tab to view the default **Hardware Tier** and **Compute Environment** - ensure they are set to `Small` and `WineQuality` respectively:
 
 <p align="center">
 <img src = readme_images/ProjectSettings.png width="800">
 </p>
 
-Go to the **Access and Sharing** tab and change your project visibility to **Public**. This allows anyone with access to your Domino URL to see the files and executions in your project -- on LaunchPad, they must first have logged in with the NVIDIA-provided credentials.
+Go to the **Access and Sharing** tab and change your project visibility to `Public`. This allows anyone with access to your Domino URL to see the files and executions in your project -- on LaunchPad, they must first have logged in with the NVIDIA-provided credentials.
 
 <p align="center">
 <img src = readme_images/ProjectVisibility.png width="800">
