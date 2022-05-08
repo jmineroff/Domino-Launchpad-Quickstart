@@ -46,13 +46,13 @@ Note: on LaunchPad, they must first have logged in with the NVIDIA-provided cred
 <img src = readme_images/ProjectVisibility.png width="800">
 </p>
 
-Add your instructor or another attendee as a collaborator in your project. 
+[optional] - If a colleague of yours has an account in this Domino, you can add them as a collaborator in your project. 
 
 <p align="center">
 <img src = readme_images/AddCollaborator.png width="800">
 </p>
 
-Change their permissions to **Results Consumer**.
+Change their permissions to **Results Consumer**. This permission level does not allow them to start executions or change files in your project, but will allow them to see files and published artifacts.
 
 <p align="center">
 <img src = readme_images/ResultsConsumer.png width="800">
@@ -72,7 +72,7 @@ Click on **Add Goals**.
 <img src = readme_images/AddProjectGoals.png width="800">
 </p>
 
-For the goal title type in `Explore Data` and click save. Once the goal is saved click the drop down on the right to mark the goal status as `Data Acquisition and Exploration`.
+For the goal title type in `Explore Data` and click **Save**. Once the goal is saved click the drop down on the right to mark the goal status as `Data Acquisition and Exploration`.
 
 <p align="center">
 <img src = readme_images/Goal1status.png width="800">
