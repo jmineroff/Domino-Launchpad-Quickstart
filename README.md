@@ -100,7 +100,7 @@ Select the `WineQuality` S3 bucket connection and click **Add to project**. This
 <img src = readme_images/AddS3.png width="800">
 </p>
 
-The data source should look like the image below.
+The Data Source should look like the image below.
 
 <p align="center">
 <img src = readme_images/S3done.png width="800">
