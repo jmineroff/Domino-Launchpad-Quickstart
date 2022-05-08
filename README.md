@@ -1,6 +1,6 @@
-## Domino Hands-On Workshop: Predicting Wine Quality
+## Domino Tutorial: Predicting Wine Quality
 
-#### In this workshop you will work through an end-to-end workflow broken into various labs to -
+#### In this project you will work through an end-to-end workflow broken into various labs to:
 
 * Read in data from a live source
 * Prepare your data in an IDE of your choice, with an option to leverage distributed computing clusters
@@ -31,7 +31,7 @@ Select the project called WineQuality
 
 Read the readme to learn more about the project's use case, status, etc.
 
-In the top right corner, choose the icon to **fork** the project. Name the project *Domino-Training-yourname*
+In the top right corner, choose the icon to **Fork** the project. Name the project *WineQuality-yourname*
 
 <!-- ![image](readme_images/Fork.png) -->
 
@@ -39,9 +39,9 @@ In the top right corner, choose the icon to **fork** the project. Name the proje
 <img src = readme_images/Fork.png width="800">
 </p>
 
-In your new project - go into the settings tab
+In your new project - go into the **Settings** tab
 
-View the default hardware tier and compute environment - ensure they are set to 'Small' and 'Domino-Workshop-Environment' respectively:
+View the default Hardware Tier and Compute Environment - ensure they are set to **Small** and **WineQuality** respectively:
 
 <!-- ![image](readme_images/ProjectSettings.png) -->
 
@@ -65,7 +65,7 @@ Add your instructor or another attendee as a collaborator in your project.
 <img src = readme_images/AddCollaborator.png width="800">
 </p>
 
-Change their permissions to Results Consumer.
+Change their permissions to **Results Consumer**.
 <!-- ![image](readme_images/ResultsConsumer.png) -->
 
 <p align="center">
@@ -100,7 +100,7 @@ For the goal title type in 'Explore Data' and click save. Once the goal is saved
 <img src = readme_images/Goal1status.png width="800">
 </p>
 
-[optional] - Add a comment to the goal and tag a collaborator you've added earlier by typing @ then their username. Please click on the paper airplane to submit the comment.
+[optional] - Add a comment to the goal and tag a collaborator you've added earlier by typing '@' followed by their username. Click on the paper airplane to submit the comment.
 
 <!-- ![image](readme_images/Goal1comment.png) -->
 
@@ -111,9 +111,7 @@ For the goal title type in 'Explore Data' and click save. Once the goal is saved
 
 ### Lab 1.3 - Add Data Source
 
-We will now add a data connection defined by the admin of our project to later query in data. To do so - navigate to the Data tab of your projects. If you're taken to the Domino Datasets view, please click on the Data Sources view instead and click on 'Add a Data Source'
-
-Select the 'domino-winequality-workshop' s3 bucket connection and click add to project
+We will now add a data connection to the project so we can query data. To do so - navigate to the Data tab of your projects. If you're taken to the Domino Datasets view, please click on the Data Sources view instead and click on 'Add a Data Source'
 
 <!-- ![image](readme_images/AddDataSource.png) -->
 
@@ -122,7 +120,7 @@ Select the 'domino-winequality-workshop' s3 bucket connection and click add to p
 <img src = readme_images/AddDataSource.png width="800">
 </p>
 
-Select the 'domino-winequality-workshop' s3 bucket connection and click add to project
+Select the 'winequality' s3 bucket connection and click add to project. This connection was predefined by an admin, but you'll be able to create one yourself as well. 
 
 <!-- ![image](readme_images/AddS3.png) -->
 
@@ -138,12 +136,12 @@ The data source should look like the image below
 <img src = readme_images/S3done.png width="800">
 </p>
 
-This concludes all labs in section 1 - Prepare Project and Data! 
+This concludes all labs in Section 1 - Prepare Project and Data! 
 
 ## Section 2 - Develop Model
 
 ### Lab 2.1 - Inspect Compute Environment
-From the left blue menu click on the cube icon page called 'Environments'.
+From the left blue menu click on the cube icon called 'Environments'.
 
 <!-- ![image](readme_images/ShowEnv.png) -->
 
@@ -151,7 +149,7 @@ From the left blue menu click on the cube icon page called 'Environments'.
 <img src = readme_images/ShowEnv.png width="800">
 </p>
 
-Select 'Domino-Workshop-Environment' 
+Select 'WineQuality' 
 
 <!-- ![image](readme_images/EnvironmentsPage.png) -->
 
@@ -175,23 +173,23 @@ Finally navigate to the Projects tab - you should see all projects that are leve
 <img src = readme_images/SaidEnvs.png width="800">
 </p>
 
-Click into the Workspaces tab to prepare for the next lab.
+Click into the **Workspaces** tab to prepare for the next lab.
 
 ### Lab 2.2 - Exploring Workspaces
 
-In the top right corner click Create New Workspace
+In the top right corner click **Create New Workspace**
 
 <p align="center">
 <img src = readme_images/AddWorkspace.png width="800">
 </p>
 
-Type a name for the Workspace in the 'Workspace Name' cell and next click through the available Compute Environments in the Workspace Environment drop down button. Next, ensure that Domino-Workspace-Environment is selected.
+Type a name for the Workspace in the 'Workspace Name' cell. Next, click through the available Compute Environments in the Workspace Environment dropdown and ensure that 'WineQuality' is selected.
 
-Select JupyterLab as the Workspace IDE
+Select JupyterLab as the Workspace IDE.
 
-Click the Hardware Tier dropdown to browse all available hardware configurations - ensure that Small is selected. 
+Click the Hardware Tier dropdown to browse all available hardware configurations - ensure that **Small** is selected. 
 
-Click Launch now.
+Click **Launch now**.
 
 <p align="center">
 <img src = readme_images/LaunchWorkspace.png width="800">
@@ -326,7 +324,7 @@ Check out the code in the script and comments describing the purpose of each lin
 
 You can also check out any of the training scripts that multitrain.py will call.
 
-Now switch into your other browser tab to return to your domino project. Navigate to the Jobs page. Click on **Run**.
+Now switch into your other browser tab to return to your Domino Project. Navigate to the Jobs page. Click on **Run**.
 
 <p align="center">
 <img src = readme_images/Jobspage.png width="800">
@@ -348,7 +346,7 @@ Watch as three job runs have appeared, you may see them in starting, running or 
 <img src = readme_images/Jobs.png width="800">
 </p>
 
-Click into the sklearn_model_train.py job run.
+Click into the `sklearn_model_train.py` job run.
 
 In the details tab of the job run note that the compute environment and hardware tier are tracked to document not only who ran the experiment and when, but what versions of the code, software, and hardware were executed.
 
@@ -357,7 +355,7 @@ In the details tab of the job run note that the compute environment and hardware
 </p>
 
 
-Click on the Results tab of the job. Scroll down to view the visualizations and other outputs of the job.
+Click on the **Results** tab of the job. Scroll down to view the visualizations and other outputs of the job.
 
 <p align="center">
 <img src = readme_images/sklearnResults.png width="800">
@@ -377,7 +375,7 @@ In the next section of labs we will deploy the model we trained here!
 
 Now that you have completed model training and selection - it's time to get your model deployed.
 
-In the last lab - we trained a sklearn model and saved it to a serialized (pickle) file. To deploy this trained model - we'll use a script to load in the saved model object and pass new records for scoring. 
+In the last lab - we trained a sklearn model and saved it to a serialized (pickle) file. To deploy the trained model using a script to load in the saved model object and pass new records for inference.
 
 To do so - navigate to the **Model APIs** tab in your project. Click **New Model**.
 
@@ -385,9 +383,9 @@ To do so - navigate to the **Model APIs** tab in your project. Click **New Model
 <img src = readme_images/NewModelAPI.png width="800">
 </p>
 
-Name your model 'wine-model-yourname'
+Name your model 'wine-quality-yourname'
     
-For the description add the following 
+For the description add the following:
     
 ```
 Model Endpoint to determine the quality of wine
@@ -405,41 +403,39 @@ Sample Scoring Request:
 }
 ```
     
-Be sure to check the box *Log HTTP requests and responses to model instance logs* 
+Be sure to check the box **Log HTTP requests and responses to model instance logs**.
 
 <p align="center">
 <img src = readme_images/NewModelAPIConfig1.png width="800">
 </p>    
 
-Click **Next**. On the next page - 
+Click **Next**. On the next page:
     
 For **Choose an Environment** select
-`Domino-Workshop-Environment`
+`WineQuality`
 
 For **The file containing the code to invoke (must be a Python or R file)** enter
-
 `scripts/predict.py`
     
 For **The function to invoke** enter
-    
 `predict`
-    
+
 And click **Create Model**
-    
+
 <p align="center">
 <img src = readme_images/NewModelAPIConfig.png width="800">
-</p>        
+</p>
   
 Over the next 2-5 minutes, you'll see the status of your model go from Preparing to Build -> Building -> Starting -> Running
 <p align="center">
 <img src = readme_images/ModelAPIBuilding.png width="800">
-</p>        
-    
+</p>
+
     
 Once your model reaches the Running state - a pod containing your model object and code for inference is up and ready to accept REST API calls.
 
 To test your model navigate to the Overview tab. In the request field in the Tester tab enter a scoring request in JSON form. You can copy the sample request that you defined in your description field.
-    
+
 <p align="center">
 <img src = readme_images/ScoringRequest.png width="800">
 </p>        
@@ -639,17 +635,17 @@ Lines 61-79 in your file should look like the following (note the url and authen
 <img src = readme_images/ShinyCodePasted.png width="800">
 </p>         
 
-Click **Save**
-                   
-Now that you have your app.sh and shiny_app.R files created. Navigate to the **App** tab in your project
+Click **Save**.
 
-Enter a title for your app - 'wine-app-yourname'
+Now that you have your `app.sh` and `shiny_app.R` files created. Navigate to the **App** tab in your project
+
+Enter a title for your app - 'wine-quality-yourname'
 
 <p align="center">
 <img src = readme_images/LaunchApp.png width="800">
 </p>       
 
-Click Publish.
+Click **Publish**.
                    
 You'll now see the below screen, once your app is active (should be within ~1-3 minutes) you can click the View App button. 
 
@@ -667,7 +663,7 @@ Once you're in the app you can try out sending different scoring requests to you
 
 ### Lab 4.1 - Share Web App and Model API
 
-Congratulations! You have now gone through a full workflow to pull data from an S3 bucket, clean and visualize the data, train several models across different frameworks, deploy the best performing model, and use a web app front end for easy scoring of your model. Now the final step is to get your model and front end into the hands of the end users.
+Congratulations! You have now gone through a full workflow to pull data from an S3 bucket, clean and visualize the data, train several models across different frameworks, deploy the best performing model, and use a web app front end for easy scoring of your model. Now the final step is to get your model and app into the hands of the end users.
 
 To do so we will navigate back to our project and click on the **App** tab
 
@@ -690,12 +686,10 @@ Navigate back to the **settings** tab and click **Copy Link App**
 <img src = readme_images/CopyAppLink.png width="800">
 </p>       
 
-Paste the copied link into a new private/incognito window. Note that you're able to view the app without being logged into Domino. Try sending this URL to a colleague at your company to show them the work you've done.
+Paste the copied link into a new private/incognito window and. Note that you're able to view the app without being logged into Domino (though you will still need to be logged into Launchpad as this trial environment blocks all other ingress). Try sending this URL to a colleague at your company to show them the work you've done.
 
 PS - Domino provides free licenses for business users to login and view models/apps etc.
 
 ### *** End of Labs *** 
 
 So now that we've got our model into production are we done? No! We want to make sure that any models we deploy stay healthy over time, and if our models do drop in performance, we want to quickly identify and remediate any issues. Stay tuned for a demo of integrated model monitoring to see how a ML Engineer would automate the model monitoring process and make remediation a breeze.
-
-
