@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cp -a /repos/Domino-Launchpad-Quickstart/* /mnt
+cd /repos/Domino-Launchpad-Quickstart/
+cp -a . /mnt
 
 sed -i -e 's|<img src = |![image](raw/latest/|g' /mnt/README.md
 sed -i -e 's| width="800">|)|g' /mnt/README.md
