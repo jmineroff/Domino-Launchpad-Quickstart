@@ -13,7 +13,7 @@
 ## Section 1 - Project Set Up
 
 ### Lab 1.1 - Forking Existing Projects
-Guide your mouse to the left blue menu and click the **Search** page. Afterwards, type the word `Training` in the cell provided and hit `Enter` to discover any projects tagged with `Training`. (The left blue menu shrinks to show only the icon of the pages. Unshrink the left blue menu by guiding your mouse over the icon pages.)
+Guide your mouse to the sidebar and click the **Search** page. Afterwards, type the word `Training` in the cell provided and hit `Enter` to discover any projects tagged with `Training`. (The blue sidebar shrinks to show only the icon of the pages; unshrink it by guiding your mouse over the icon pages.)
 
 <p align="center">
 <img src = readme_images/SearchIndex.png width="800">
