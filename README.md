@@ -13,35 +13,33 @@
 ## Section 1 - Project Set Up
 
 ### Lab 1.1 - Forking Existing Projects
-Guide your mouse to the left blue menu and click the **Search** page. Afterwards, type the word 'Training' in the cell provided and click enter to discover any projects tagged under 'Training'. (The left blue menu shrinks to show only the icon of the pages. Unshrink the left blue menu by guiding your mouse over the icon pages.)
+Guide your mouse to the left blue menu and click the **Search** page. Afterwards, type the word `Training` in the cell provided and hit `Enter` to discover any projects tagged with `Training`. (The left blue menu shrinks to show only the icon of the pages. Unshrink the left blue menu by guiding your mouse over the icon pages.)
 
 <p align="center">
 <img src = readme_images/SearchIndex.png width="800">
 </p>
 
-Select the project called WineQuality
+Select the project called `WineQuality`.
 
 <p align="center">
 <img src = readme_images/Search.png width="800">
 </p>
 
-Read the readme to learn more about the project's use case, status, etc.
+Look at the readme to learn more about the project.
 
-In the top right corner, choose the icon to **Fork** the project. Name the project *WineQuality-yourname*
+In the top right corner, choose the icon to **Fork** the project. Name the project `WineQuality`.
 
 <p align="center">
 <img src = readme_images/Fork.png width="800">
 </p>
 
-In your new project - go into the **Settings** tab
-
-View the default Hardware Tier and Compute Environment - ensure they are set to **Small** and **WineQuality** respectively:
+In your new project - go into the **Settings** tab to view the default **Hardware Tier** and **Compute Environment** - ensure they are set to **Small** and **WineQuality** respectively:
 
 <p align="center">
 <img src = readme_images/ProjectSettings.png width="800">
 </p>
 
-Go to the Access and Sharing tab - change your project visibility to **Public**
+Go to the **Access and Sharing** tab and change your project visibility to **Public**. This allows anyone with access to your Domino URL to see the files and executions in your project -- on LaunchPad, they must first have logged in with the NVIDIA-provided credentials.
 
 <p align="center">
 <img src = readme_images/ProjectVisibility.png width="800">
@@ -61,25 +59,25 @@ Change their permissions to **Results Consumer**.
 
 ### Lab 1.2 - Defining Project Goals
 
-Click back into the Overview area of your project. Then navigate to the Manage tab.
+Click back into the **Overview** area of your project. Then navigate to the **Manage** tab.
 
 <p align="center">
 <img src = readme_images/Overview.png width="800">
 </p>
 
-Click on **Add Goals**
+Click on **Add Goals**.
 
 <p align="center">
 <img src = readme_images/AddProjectGoals.png width="800">
 </p>
 
-For the goal title type in 'Explore Data' and click save. Once the goal is saved click the drop down on the right to mark the goal status as 'Data Acquisition and Exploration'.
+For the goal title type in `Explore Data` and click save. Once the goal is saved click the drop down on the right to mark the goal status as `Data Acquisition and Exploration`.
 
 <p align="center">
 <img src = readme_images/Goal1status.png width="800">
 </p>
 
-[optional] - Add a comment to the goal and tag a collaborator you've added earlier by typing '@' followed by their username. Click on the paper airplane to submit the comment.
+[optional] - If you've already added a collaborator to Domino, add a comment to the goal and tag them by typing '@' followed by their username. Click on the paper airplane to submit the comment.
 
 <p align="center">
 <img src = readme_images/Goal1comment.png width="800">
@@ -87,19 +85,21 @@ For the goal title type in 'Explore Data' and click save. Once the goal is saved
 
 ### Lab 1.3 - Add Data Source
 
-We will now add a data connection to the project so we can query data. To do so - navigate to the Data tab of your projects. If you're taken to the Domino Datasets view, please click on the Data Sources view instead and click on 'Add a Data Source'
+We will now add a data connection to the project so we can query data. As a code-first platform, Domino allows you to connect to data with any Python/CLI/etc. tools you already use, but there are also UI methods that make it easier to share and manage your data sources.
+
+To use one of these, navigate to **Data** in the sidebar of your project and click on **Add a Data Source** (you may need to click on the **Data Sources** tab first).
 
 <p align="center">
 <img src = readme_images/AddDataSource.png width="800">
 </p>
 
-Select the 'winequality' s3 bucket connection and click add to project. This connection was predefined by an admin, but you'll be able to create one yourself as well. 
+Select the `WineQuality` S3 bucket connection and click **Add to project**. This example connection was predefined by an admin, but it is possible for all users to create these.
 
 <p align="center">
 <img src = readme_images/AddS3.png width="800">
 </p>
 
-The data source should look like the image below
+The data source should look like the image below.
 
 <p align="center">
 <img src = readme_images/S3done.png width="800">
@@ -109,28 +109,33 @@ This concludes all labs in Section 1 - Prepare Project and Data!
 
 ## Section 2 - Develop Model
 
+Now that we have our data in place, let's set up everything we need to run executions and train a model.
+
 ### Lab 2.1 - Inspect Compute Environment
-From the left blue menu click on the cube icon called 'Environments'.
+
+From the left blue menu click on the cube icon labelled **Environments**. Compute Environments are a Domino abstraction based on Docker images -- effectively a snapshot of a machine at a given point of time -- which allow you to:
+
+* Rerun code from months or years ago and know that the underlying packages/dependencies are unchanged.
+* Collaborate while being sure that you and your teammates are using the exact same software environment.
+* Cache a large number of packages so you don't have to wait for them to install the first time you (or a coworker) runs your code.
 
 <p align="center">
 <img src = readme_images/ShowEnv.png width="800">
 </p>
 
-Select 'WineQuality' 
+Select the **WineQuality** Environment.
 
 <p align="center">
 <img src = readme_images/EnvironmentsPage.png width="800">
 </p>
 
-Inspect the dockerfile to understand the packages installed, configurations specified, and kernels installed etc. 
+Inspect the **Dockerfile** to understand the packages installed, configurations specified, and kernels installed etc. 
 
-Scroll down to Pluggable Workspaces Tools - this is the area in the compute environment where IDEs are made available for end users
+Scroll down to **Pluggable Workspaces Tools**. This is the area in the Compute Environment where IDEs are made available for end users.
 
-Scroll down to the Run Setup Scripts section
+Scroll down to the **Run Setup Scripts** section. Here we have a script that executes upon startup of workspace sessions or job (pre-run script) and a script that executes upon termination of a workspace session or job (post-run script).
 
-Here we have a script that executes upon startup of workspace sessions or job (pre-run script) and a script that executes upon termination of a workspace session or job (post-run script) 
-
-Finally navigate to the Projects tab - you should see all projects that are leveraging this compute environment. Click on your project to navigate back to your project. 
+Finally navigate to the **Projects** tab - you should see all projects that are leveraging this compute environment. Click on your project to navigate back to it.
 
 <p align="center">
 <img src = readme_images/SaidEnvs.png width="800">
@@ -140,17 +145,19 @@ Click into the **Workspaces** tab to prepare for the next lab.
 
 ### Lab 2.2 - Exploring Workspaces
 
-In the top right corner click **Create New Workspace**
+Workspaces are interactive sessions in Domino where you can use any of the IDEs you have configured in your Compute Environment or the terminal.
+
+In the top right corner click **Create New Workspace**.
 
 <p align="center">
 <img src = readme_images/AddWorkspace.png width="800">
 </p>
 
-Type a name for the Workspace in the 'Workspace Name' cell. Next, click through the available Compute Environments in the Workspace Environment dropdown and ensure that 'WineQuality' is selected.
+Type a name for the Workspace in the **Workspace Name** cell. Next, click through the available Compute Environments in the **Workspace Environment** dropdown and ensure that `WineQuality` is selected.
 
-Select JupyterLab as the Workspace IDE.
+Select **JupyterLab** as the **Workspace IDE**.
 
-Click the Hardware Tier dropdown to browse all available hardware configurations - ensure that **Small** is selected. 
+Click the **Hardware Tier** dropdown to browse all available hardware configurations - ensure that **Small** is selected. 
 
 Click **Launch now**.
 
@@ -164,19 +171,19 @@ Once the workspace is launched, create a new python notebook by clicking here:
 <img src = readme_images/NewNotebook.png width="800">
 </p>
 
-Once your notebook is loaded, click on the left blue menu and click on the Data page, then onto the data source we added in lab 1 as displayed below
+Once your notebook is loaded, click on the left blue menu and click on the **Data** page, followed by the Data Dource we added in Lab 1 as displayed below.
 
 <p align="center">
 <img src = readme_images/DataTab.png width="800">
 </p>
 
-Copy the provided code snippet into your notebook and run the cell
+Copy the provided code snippet into your notebook and run the cell.
 
 <p align="center">
 <img src = readme_images/S3CodeSnippet.png width="800">
 </p>
 
-After running the code snippet. Copy the code below into the following cell 
+After running the code snippet. Copy the code below into the following cell.
 
 ```python
 from io import StringIO
@@ -189,7 +196,7 @@ df=pd.read_csv(data)
 df.head()
 ```
 
-Now cell by cell, copy the code snippets below and run the cells to visualize and prepare the data! (You can click on the '+' icon to add a blank cell after the current cell)
+Now, copy the code snippets below  cell-by-cell and run the cells to visualize and prepare the data! (You can click on the **+** icon to add a blank cell after the current cell).
 
 ```python
 import seaborn as sns
@@ -216,7 +223,7 @@ for i in list(important_feats.keys())+['quality']:
     sns.histplot(df[i], kde=True)
 ```
 
-Finally write your data to a Domino Dataset by running
+Finally write your data to a Domino Dataset by running. Domino Datasets are read-write folders that allow you to efficiently store large amounts of data and share it across projects. They support access controls and the ability to create read-only snapshots, but those features are outside the scope of this lab.
 
 ```python
 import os
@@ -224,13 +231,13 @@ path = str('/domino/datasets/local/{}/WineQualityData.csv'.format(os.environ.get
 df.to_csv(path, index = False)
 ```
 
-Your notebook should be populated like the display below.
+Your notebook should now be populated like the display below.
 
 <p align="center">
 <img src = readme_images/EDAView.png width="800">
 </p>
 
-Rename your notebook 'EDA_code.ipynb' by right clicking on the file name as shown below then click the Save icon.
+Rename your notebook `EDA_code.ipynb` by right clicking on the file name as shown below then click the save icon.
 
 <p align="center">
 <img src = readme_images/RenameAndSaveNotebook.png width="800">
@@ -238,36 +245,35 @@ Rename your notebook 'EDA_code.ipynb' by right clicking on the file name as show
 
 ### Lab 2.3 - Syncing Files
 
-Now that we've finished working on our notebook and written data back to our project, we want to sync our latest work. To do so click on the File Changes tab in the top left corner of your screen - 
+Files in a workspace are seperate from the files in your project. Now that we've finished working on our notebook, we want to sync our latest work. To do so click on the **File Changes** tab in the top left corner of your screen.
 
 <p align="center">
 <img src = readme_images/SyncProject.png width="800">
 </p>
 
-Enter an informative but brief commit message such as "Completed EDA notebook" and click to Sync All Changes. 
+Enter an informative but brief commit message such as `Completed EDA notebook` and click **Sync All Changes**. 
 
-Click the Domino logo on the upper left corner of the blue menu and select on the Project page. Then select your project followed by selecting “Files” on the left blue menu as shown below.   
+Click the **Domino** logo on the upper-left corner of the blue menu and select the **Project** page. Then select your project followed by selecting **Files** on the blue sidebar as shown below.
 
-Notice that the latest commit will reflect the commit message you just logged and you can see 'EDA_code.ipynb' in your file directory.
+Notice that the latest commit will reflect the commit message you just logged and you can see `EDA_code.ipynb` in your file directory.
 
 <p align="center">
 <img src = readme_images/DFS.png width="800">
 </p>
 
-Click on your notebook to view it. On the top of your screen and click 'Link to Goal' in the dropdown, after selecting the goal you created in Lab 1.2
+Click on your notebook to view it. On the top of your screen and click **Link to Goal** in the dropdown and then select the goal you created in Lab 1.2.
 
 <p align="center">
 <img src = readme_images/LinkToGoal.png width="800">
 </p>
 
-Now navigate to Overview, then to the manage tab and see your linked notebook.
+Now navigate to **Overview** and the **Manage** tab to see your linked notebook.
 
-Click the ellipses on the goal to mark the goal as complete
+Click the ellipses on the goal to mark the goal as complete.
 
 <p align="center">
 <img src = readme_images/MarkGoalComplete.png width="800">
 </p>
-
 
 ### Lab 2.4 - Run and Track Experiments
 
@@ -275,7 +281,7 @@ Now it's time to train our models!
 
 We are taking a three pronged approach and building a model in sklearn (python), xgboost (R), and an auto-ml ensemble model (h2o).
 
-First, navigate back to your JupyterLab workspace tab. In your file browser go into the scripts folder and inspect 'multitrain.py'
+First, navigate back to your JupyterLab workspace tab. In your file browser go into the scripts folder and inspect `multitrain.py`.
 
 <p align="center">
 <img src = readme_images/MultiTrain.png width="800">
@@ -283,15 +289,17 @@ First, navigate back to your JupyterLab workspace tab. In your file browser go i
 
 Check out the code in the script and comments describing the purpose of each line of code.
 
-You can also check out any of the training scripts that multitrain.py will call.
+You can also check out any of the training scripts that `multitrain.py` will call.
 
-Now switch into your other browser tab to return to your Domino Project. Navigate to the Jobs page. Click on **Run**.
+Now switch into your other browser tab to return to your Domino Project. Navigate to the **Jobs** page. Domino Jobs are non-interactive workloads that run a script in your project. While Workspaces stay open for an arbitrary amount of time (within admin-defined limits), Jobs will free up the underlying compute resources as soon as the script execution is finished.
+
+Click on **Run**.
 
 <p align="center">
 <img src = readme_images/Jobspage.png width="800">
 </p>
 
-Type in the following command below in the **File Name** section of the **Start a Job** pop up window. Click on **Start** to run the job.
+Type in the following command in the **File Name** section of the **Start a Job** pop-up window. Click on **Start** to run the job.
 
 ```shell
 scripts/multitrain.py
@@ -309,13 +317,13 @@ Watch as three job runs have appeared, you may see them in starting, running or 
 
 Click into the `sklearn_model_train.py` job run.
 
-In the details tab of the job run note that the compute environment and hardware tier are tracked to document not only who ran the experiment and when, but what versions of the code, software, and hardware were executed.
+In the **Details** tab of the Job, note that the Compute Environment and Hardware Tier are tracked to document not only who ran the experiment and when, but what versions of the code, software, and hardware were executed.
 
 <p align="center">
 <img src = readme_images/sklearnRunDetails.png width="800">
 </p>
 
-Click on the **Results** tab of the job. Scroll down to view the visualizations and other outputs of the job.
+Click on the **Results** tab of the Job. Scroll down to view the visualizations and other outputs.
 
 <p align="center">
 <img src = readme_images/sklearnResults.png width="800">
@@ -333,7 +341,7 @@ In the next section of labs we will deploy the model we trained here!
 
 Now that you have completed model training and selection - it's time to get your model deployed.
 
-In the last lab - we trained a sklearn model and saved it to a serialized (pickle) file. To deploy the trained model using a script to load in the saved model object and pass new records for inference.
+In the last lab - we trained a sklearn model and saved it to a serialized (pickle) file. We now want to deploy the trained model using a script to load in the saved model object and pass new records for inference.
 
 To do so - navigate to the **Model APIs** tab in your project. Click **New Model**.
 
@@ -341,7 +349,7 @@ To do so - navigate to the **Model APIs** tab in your project. Click **New Model
 <img src = readme_images/NewModelAPI.png width="800">
 </p>
 
-Name your model 'wine-quality-yourname'
+Name your model `wine-quality-yourname`
 
 For the description add the following:
 
@@ -378,45 +386,46 @@ For **The file containing the code to invoke (must be a Python or R file)** ente
 For **The function to invoke** enter
 `predict`
 
-And click **Create Model**
+And click **Create Model**.
 
 <p align="center">
 <img src = readme_images/NewModelAPIConfig.png width="800">
 </p>
 
-Over the next 2-5 minutes, you'll see the status of your model go from Preparing to Build -> Building -> Starting -> Running
+Over the next 2-5 minutes, you'll see the status of your model go from `Preparing to Build` -> `Building` -> `Starting` -> `Running`.
+
 <p align="center">
 <img src = readme_images/ModelAPIBuilding.png width="800">
 </p>
 
-Once your model reaches the Running state - a pod containing your model object and code for inference is up and ready to accept REST API calls.
+Domino is creating a new Docker image that includes the files in your project, your compute environment, and additional code to host your script as an API. Once your model reaches the Running state -- a pod containing your model object and code for inference is up and ready to accept REST API calls.
 
-To test your model navigate to the Overview tab. In the request field in the Tester tab enter a scoring request in JSON form. You can copy the sample request that you defined in your description field.
+To test your model navigate to the **Overview** tab. In the **Request** field in the **Tester** tab enter a scoring request in JSON form. You can copy the sample request that you defined in your description field.
 
 <p align="center">
 <img src = readme_images/ScoringRequest.png width="800">
 </p>
     
-In the response box you will see a **prediction** value representing your model's predicted quality for a bottle of wine with the attributes defined in the Request box. Try changing 'is_red' from 0 to 1 and 'alcohol' from 11 to 5 to see how the predicted quality differs. Feel free to play around with different values in the Request box.
+In the **Response** box you will see a **prediction** value representing your model's predicted quality for a bottle of wine with the attributes defined in the Request box. Try changing 'is_red' from 0 to 1 and 'alcohol' from 11 to 5 to see how the predicted quality differs. Feel free to play around with different values in the **Request** box.
 
-After you have sent a few scoring requests to the model endpoint, check out the instance logs by clicking the Instance Logs button. Here you can see that all scoring requests to the model complete with model inputs, responses, response times, errors, warnings etc. are being logged. Close the browser tab that you were viewing the instance logs in. 
+After you have sent a few scoring requests to the model endpoint, check out the instance logs by clicking the **Instance Logs** button. Here you can see that all scoring requests to the model complete with model inputs, responses, response times, errors, warnings, etc. are being logged. Close the browser tab that you were viewing the instance logs in. 
 
-Now, back on your model's overview page - note that there are several tabs next to the **Tester** tab that provide code snippets to score our model from a web app, command line, or other external source.
+Now, back on your model's **Overview** page - note that there are several tabs next to the **Tester** tab that provide code snippets to score our model from a web app, command line, or other external source.
 
-In the next lab we will deploy an R shiny app that exposes a front end for collecting model input, passing that input to the model, then parsing the model's response to a dashboard for consumption.
+In the next lab we will deploy an R shiny app that exposes a frontend for collecting model input, passing that input to the model, then parsing the model's response to a dashboard for consumption.
 
 ### Lab 3.2 Deploying Web App
+
+Now that we have a pod running to serve new model requests - we will build out a frontend to make calling our model easier for end-users.
     
-Now that we have a pod running to serve new model requests - we will build out a front end to make calling our model easier for end-users.
-    
-To do so - in a new browser tab first navigate back to your Project and then in the left blue menu of your project click into the **Files** section and click **New File**
+In a new browser tab first navigate back to your Project and then in the blue sidebar of your project click into the **Files** section and click **New File**.
 
 <p align="center">
 <img src = readme_images/AddNewFileforAppsh.png width="800">
 </p>     
 
-Next, we will create a file called app.sh. It's a bash script that will start and run the Shiny App server based on the inputs provided.
-Copy the following code snippet in - 
+We will create a file called `app.sh`. It's a bash script that will start and run the Shiny App server based on the inputs provided.
+Copy the following code snippet.
 
 ```shell
 #!/usr/bin/env bash
@@ -440,13 +449,14 @@ R -e 'shiny::runApp("./scripts/shiny_app.R", port=8888, host="0.0.0.0")'
 ## This is an example of the code you would need in this bash script for a Dash app
 #python app-dash.py
 ```
-Name the file **app.sh** and click **Save**
+
+Name the file `app.sh` and click **Save**.
 
 <p align="center">
 <img src = readme_images/appsh.png width="800">
 </p>
 
-Now navigate back into the Files tab, and enter the **scripts** folder. Click add a new file and name it `shiny_app.R` (make sure the file name is exactly that, it is case sensitive) and then paste the following into the file -
+Now navigate back into the **Files** tab, and enter the `scripts/` folder. Click **Add a new file** and name it `shiny_app.R` (make sure the file name is exactly that, as it is case sensitive) and then paste the following into the file.
 
 ```R
 #
@@ -582,7 +592,7 @@ server <- function(input, output,session) {
 shinyApp(ui = ui, server = server)
 ```
 
-**Go to line 63** note that this is missing input for your model api endpoint. In a new tab navigate to your model API you just deployed. Go into overview and select the R tab as shown below. Copy lines 4-7 from the R code snippet. Switch back to your new file tab and paste the new lines in line 64 in your file.
+**Go to line 63** note that this is missing input for your model api endpoint. In a new tab navigate to your Model API you just deployed. Go into overview and select the R tab as shown below. Copy lines 4-7 from the R code snippet. Switch back to your new file tab and paste the new lines in line 64 in your file.
 
 <p align="center">
 <img src = readme_images/RcodeSnippet.png width="800">
@@ -597,21 +607,21 @@ Click **Save**.
 
 Now that you have your `app.sh` and `shiny_app.R` files created. Navigate to the **App** tab in your project
 
-Enter a title for your app - 'wine-quality-yourname'
+Enter a title for your app, e.g. 'wine-quality-yourname'
 
 <p align="center">
 <img src = readme_images/LaunchApp.png width="800">
 </p>
 
 Click **Publish**.
-                   
-You'll now see the below screen, once your app is active (should be within ~1-3 minutes) you can click the View App button. 
+
+You'll now see the below screen, once your app is active (typically within ~1-3 minutes) you can click the **View App** button. 
 
 <p align="center">
 <img src = readme_images/ViewApp.png width="800">
 </p>
         
-Once you're in the app you can try out sending different scoring requests to your model using the form on the right side of your page. Click **predict** to send a scoring request and view the results in the visualization on the left side.
+Try sending different scoring requests to your model using the form on the right side of your app. Click **Predict** to send a scoring request and view the results in the visualization on the left side.
                    
 <p align="center">
 <img src = readme_images/ShinyScore.png width="800">
@@ -621,7 +631,7 @@ Once you're in the app you can try out sending different scoring requests to you
 
 ### Lab 4.1 - Share Web App and Model API
 
-Congratulations! You have now gone through a full workflow to pull data from an S3 bucket, clean and visualize the data, train several models across different frameworks, deploy the best performing model, and use a web app front end for easy scoring of your model. Now the final step is to get your model and app into the hands of the end users.
+Congratulations! You have now gone through a full workflow to pull data from an S3 bucket, clean and visualize the data, train several models across different frameworks, deploy the best performing model, and use a web app frontend for easy scoring of your model. Now the final step is to get your model and app into the hands of the end users.
 
 To do so we will navigate back to our project and click on the **App** tab
 
@@ -637,12 +647,12 @@ In the permissions tab update the permissions to allow anyone, including anonymo
 <img src = readme_images/UpdateAppPermissions.png width="800">
 </p>
 
-Navigate back to the **settings** tab and click **Copy Link App**
+Navigate back to the **Settings** tab and click **Copy Link to App**.
 
 <p align="center">
 <img src = readme_images/CopyAppLink.png width="800">
 </p>
 
-Paste the copied link into a new private/incognito window and. Note that you're able to view the app without being logged into Domino (though you will still need to be logged into Launchpad as this trial environment blocks all other ingress). Try sending this URL to a colleague at your company to show them the work you've done.
+With this link you're able to view the app without being logged into Domino (though you will still need to be logged into Launchpad as this trial environment blocks all other ingress).
 
 PS - Domino provides free licenses for business users to login and view models/apps etc.
